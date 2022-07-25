@@ -3,10 +3,9 @@ from flask import request
 from flask_cors import CORS
 
 import json
-import requests
-response = requests.get("https://raw.githubusercontent.com/liad07/mikud-api/main/all.txt")
+all = open("all.txt", "r", encoding="utf8")
 app = Flask(__name__)
-y = response.text
+y = all.read()
 y = y.split("\n")
 d = "not found mikud"
 json_dump={'error':"not insert text"}
